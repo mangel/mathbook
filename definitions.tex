@@ -4,6 +4,12 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage[margin=0.5in]{geometry}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{remark}{Remark}
 
 \begin{document}
 \title{Mathematical definitions for everyone}
@@ -33,5 +39,12 @@ $$f(n):=$$
 
 \paragraph{Domain}
 \paragraph{Codomain or Range}
+
+\begin{theorem}[Taylor Polinomial] Given some function $f$ with derivatives of order $n$ on the point $x=0$. Exists a only one polynomial $P$ on degree less or equal of $n$ which satisfies the $n + 1$ conditions:
+	$$P(0) = f(0), P'(0)=f'(0), \dots, P^n = f^{(n)}(0)$$
+, and given by the formula:
+	$$P(x) = \sum_{k=0}^{n} \frac{f^{(k)}(0)}{x!}x^{k}$$
+where $x \neq x_0$.
+\end{theorem}
 
 \end{document}
