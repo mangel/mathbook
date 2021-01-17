@@ -5,22 +5,62 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage[margin=0.5in]{geometry}
+\usepackage{mathrsfs}
 
+\newtheorem{axiom}{Axiom}[section]
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{remark}{Remark}
 
 \begin{document}
-\title{Mathematical definitions for everyone}
+\title{Mathematical definitions for everyone... Well, not yet but that is the goal.}
 \author{Miguel Angel Gomez Barrera}
 
 \maketitle
+
+\section{Trigonometry}
 
 \section{Set}
 
 \paragraph{Set} In mathematics, a set is a collection of well defined distinct objects, considered as an object in its own right.
 
+\begin{axiom}[Axiom of Extension] Two sets are equal if and only if they have the same elements.
+\end{axiom}
+
+\paragraph{}If $A$ and $B$ are sets and if every element of $A$ is an element of $B$, we say that $A$ is a \textit{subset} of $B$, or $B$ \textit{includes} $A$, and we write
+$$A \subset B$$
+or
+$$B \supset A$$
+\begin{axiom}[Axiom of specification]
+	To every set $A$ and to every condition $S(x)$ there corresponds a set $B$ whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
+\end{axiom}
+
+\paragraph{}For all that has been said so far, we might have been operating ina vacuum. To give discussion some substance, let us officially assume that
+\begin{center}
+	\textit{there exists a set.}
+\end{center}
+\paragraph{}The axiom of extension implies that there can only be one set with no elements, the set is called \textit{the empty set} and is represented by:
+$$\emptyset.$$
+\paragraph{}Another Example: $\{x\in \mathbb{N}: x \neq x\}$ y $\{x \in \mathbb{N}: \frac{1}{x} > 1\}$
+
+\paragraph{}The empty set is a subset of every set, or, in other words, $\emptyset \subset A$ for every $A$. To establish this, we might argue as follows. It is to be proved that every element in $\emptyset$ belongs to $A$; since there are no elements in $\emptyset$, the condition is automatically fulfilled. The reasoning is correct but perhaps unsatisfying. Since it is a typical example of a frequent phenomenon, a condition holding in the "vacuous" sense, a word of advice to the inexperienced reader might be in order. To prove that something is true about the empty set, prove that it cannot be false. How, for instance, could it be false that $\emptyset \subset A$? It could be false only if $\emptyset$ had an element that did not belong to $A$. Since $\emptyset$ has no elements at all, this is absurd. Conclusion: $\emptyset \subset A$ is not false, and therefore $\emptyset \subset A$ for every A.
+\begin{axiom}[Axiom of pairing]
+	for any two sets there exists a set that they both belong to.
+\end{axiom}
+\paragraph{Note} In case $S(x)$ is $(x \in' x)$, or in case $S(x)$ is $(x = x)$, the specified x's do not constitute a set. Despite the maxim about never getting something for nothing, it seems a little harsh to be told that certain sets are not really sets and even their names must never be mentioned. Some approaches to set theory try to soften the blow by making systematic use of such illegal sets but just not calling them sets; the customary word is "class." A precise explanation of what classes really are and how they are used is irrelevant in the present approach. Roughly speaking, a class may be identified with a condition (sentence), or, rather, with the "extension" of a condition.
+
+\begin{axiom}[Axiom of Unions]
+	For every collection of sets there exists a set that contains all the elements that belong to at least one set of the given collection.
+\end{axiom}
+\paragraph{} Here it is again: for every collection $\mathscr{C}$ there exists a set $U$ such that $x \in X$ for some $X \in \mathscr{C}$, then $x \in U$.
+\paragraph{}the comprehensive set $U$ described above may be too comprehensive; it may contain elements that belong to none of the sets $X$ in collection $\mathscr{C}$. This is easy to remedy; just apply the axiom of specification to form the set:
+$$\{x \in U: x \in X \text{ for some } X \in \mathscr{C}\},$$
+\paragraph{}If we change notation and call the set $U$ again, then
+$$U = \{x: x \in X \text{ for some } X \in \mathscr{C}\},$$
+\paragraph{}This set $U$ is called 	the \textit{union} of collection $\mathscr{C}$ of sets, note the axiom specification guarantees its uniqueness. the simplest symbol for $U$ that is in use at all is not very popular in mathematics circles; it is
+$$\bigcup \mathscr{C},$$
+\paragraph{}
 \section{Function}
 (MSC: 03E99)
 \paragraph{Function} . Is a relation between sets in which one element of the set is related to another element of the second set.
@@ -46,5 +86,16 @@ $$f(n):=$$
 	$$P(x) = \sum_{k=0}^{n} \frac{f^{(k)}(0)}{x!}x^{k}$$
 where $x \neq x_0$.
 \end{theorem}
+
+\begin{align*}
+u_{xy} &= u_x u_y\\
+\frac{u_{xy}}{u_x} &= u_y\\
+\frac{\partial}{\partial y}\left(\ln (u_x)\right) &= \frac{\partial}{\partial y}\left(u\right)\\
+c(x) + \ln(u_x) &= u\\
+u_x &= e^{u - c(x)}\\
+u_{xy} &= u_y e^{u-c(x)}
+\end{align*}
+luego,
+$u_{xy} = u_x u_y$ y $u_{xy}= u_y e^{u-c(x)}$
 
 \end{document}
